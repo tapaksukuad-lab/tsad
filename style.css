@@ -1,4 +1,6 @@
-/* Reset */
+/* ======================
+   Reset & Global Styles
+====================== */
 * {
   margin: 0;
   padding: 0;
@@ -12,32 +14,87 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Header */
+/* ======================
+   Header
+====================== */
 header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  padding: 12px 40px;
   background: linear-gradient(to right, #111, #333);
   color: white;
 }
 
-header .logo img {
+/* Logo kiri + tulisan */
+.logo img {
   height: 50px;
-  width: auto;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
-header h1 {
-  font-size: 1.8rem;
+.title {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
 }
 
-header h2 {
-  font-size: 1rem;
+.title h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.title h2 {
+  font-size: 0.9rem;
   font-weight: normal;
-  color: #ddd;
+  color: #ccc;
+  margin: 0;
 }
 
-/* Wrapper tengah (sidebar + konten) */
+/* Bungkus logo + title biar tetap di kiri */
+header .logo,
+header .title {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Menu navigasi tengah */
+.nav-menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+.nav-menu a:hover {
+  transform: scale(1.2);
+}
+
+/* Sosial media kanan */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons img {
+  height: 22px;
+  width: auto;
+  transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.3);
+}
+
+/* ======================
+   Wrapper (Sidebar + Konten)
+====================== */
 .wrapper {
   display: flex;
   flex: 1;
@@ -47,7 +104,7 @@ header h2 {
 /* Sidebar album */
 .album-sidebar {
   width: 250px;
-  background: #f8f8f8;
+  background: #2b2b2b; /* warna background album*/
   border-right: 1px solid #ddd;
   display: flex;
   flex-direction: column;
@@ -55,9 +112,9 @@ header h2 {
 
 .album-sidebar h2 {
   padding: 10px;
-  background: #eee;
+  background: #eee; /* warna background tulisan albums*/
   text-align: center;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd; 
 }
 
 .album-list {
@@ -122,26 +179,9 @@ header h2 {
   background: #444;
 }
 
-/* Footer */
-/*footer {
-  background: #111;
-  color: white;
-  text-align: center;
-  padding: 10px;
-}
-
-.content ol {
-  margin: 10px 0 20px 20px;
-  line-height: 1.6;
-}
-.content h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  color: #333;
-}
-
-/* Footer2 */
+/* ======================
+   Footer
+====================== */
 footer {
   text-align: center;
   padding: 20px;
@@ -161,4 +201,492 @@ footer p {
 footer img {
   height: 18px;   /* biar lebih kecil rapi */
   vertical-align: middle;
+}
+
+/* ======================
+   Home Page Hero Section
+   (Index.html)
+====================== */
+.home-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: #D3D3D3; /* warna background hero */
+  color: #fff;
+}
+
+.home-hero .hero-text {
+  max-width: 50%;
+}
+
+.home-hero h1 {
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+.home-hero h1 span {
+  color: #e74c3c; /* warna merah untuk kata Music */
+}
+
+.home-hero p {
+  font-size: 18px;
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.hero-buttons .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin-right: 15px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #2b2b2b; /* warna background untuk tombol stream spotify */
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #1DB954; /* hijau spotify saat hover */
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+  background-color: #2b2b2b; 
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #e74c3c; /* merah saat hover */
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.home-hero .hero-image img {
+  max-width: 600px;
+  height: auto;
+}
+
+/* Efek hover zoom tombol */
+.hero-buttons .btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Slideshow Hero */
+.hero-slideshow {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.hero-slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-slideshow img.active {
+  opacity: 1;
+  position: relative;
+}
+
+
+/* ======================
+   About Page Styles
+   Untuk halaman About.html
+====================== */
+.about {
+  background-color: #f9f9f9; /* background lebih terang untuk halaman About */
+  color: #333; /* teks lebih gelap agar nyaman dibaca */
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* Judul Section */
+.about h2 {
+  color: #2b2b2b;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* Paragraph */
+.about p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+}
+
+/* List Milestones */
+.about ul {
+  list-style-type: disc;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect milestone */
+.about ul li:hover {
+  color: #e74c3c;
+  transform: scale(1.02);
+}
+
+/* Optional: Add subtle shadow for sections */
+.about section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+
+/* ======================
+   Contact Page Styles
+   Untuk halaman Contact.html
+====================== */
+.contact {
+  background-color: #f9f9f9; /* background terang agar nyaman dibaca */
+  color: #333;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* Judul Section */
+.contact h2 {
+  color: #2b2b2b;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* Paragraph */
+.contact p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* List kontak */
+.contact ul {
+  list-style-type: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+}
+
+.contact ul li {
+  margin-bottom: 12px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.contact ul li a {
+  color: #2b2b2b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact ul li a:hover {
+  color: #e74c3c;
+  text-decoration: underline;
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #e74c3c;
+  box-shadow: 0 0 8px rgba(231,76,60,0.3);
+  outline: none;
+}
+
+/* Submit Button */
+.contact-form .btn-primary {
+  padding: 12px 25px;
+  border-radius: 25px;
+  background-color: #2b2b2b;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form .btn-primary:hover {
+  background-color: #e74c3c;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+/* Section styling */
+.contact section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* ======================
+   Responsive Contact Page
+====================== */
+@media (max-width: 768px) {
+  .contact {
+    padding: 20px 15px;
+  }
+
+  .contact h2 {
+    font-size: 24px;
+  }
+
+  .contact-form {
+    gap: 10px;
+  }
+}
+
+
+/* ======================
+   Gallery Page Styles
+   Untuk halaman Gallery.html
+====================== */
+.gallery {
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* Judul Section */
+.gallery h2 {
+  color: #2b2b2b;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* Paragraph */
+.gallery p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Grid Gambar */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Section styling */
+.gallery section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* ======================
+   Responsive Gallery Page
+====================== */
+@media (max-width: 768px) {
+  .gallery {
+    padding: 20px 15px;
+  }
+
+  .gallery h2 {
+    font-size: 24px;
+  }
+
+  .gallery p {
+    font-size: 16px;
+  }
+
+  .gallery-grid {
+    gap: 15px;
+  }
+}
+
+
+
+/* ======================
+   Placeholder CSS untuk halaman lain
+   About, Contact, Gallery
+   Tambahkan disini nanti
+====================== */
+
+/* Example: About Page Hero (optional) */
+.about-hero {
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+  color: #333;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.about-hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.about-hero p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ======================
+   Responsive
+====================== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-menu {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .album-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+  }
+
+  .content {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .home-hero {
+    flex-direction: column;
+    padding: 30px 15px;
+    text-align: center;
+  }
+
+  .home-hero .hero-text,
+  .home-hero .hero-image img {
+    max-width: 100%;
+  }
 }
